@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calculator</title>
+   <style>
+    body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width:100vw;
+      height:100vh;
+      background-color: rgb(7, 199, 135);
+    }
+    div{
+      width:220px;
+      height:250px;
+      background-color: rgba(45, 107, 86,.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding:20px;
+      border: .5px solid rgba(255, 255, 255, 0.433);
+      border-radius: 10px;
+    }
+    input{
+      border: none;
+      border-radius: 5px;
+      outline:none;
+      height:30px;
+      color: white;
+      font-size: 15px;
+      text-align: center;
+      font-weight: bold;
+      background-color: rgba(153, 231, 205, 0.5);
+
+    }
+    label{
+      color:white;
+      font-size:20px;
+      margin: 5px;
+    }
+    button{
+        border: none;
+      border-radius: 5px;
+      outline:none;
+      background-color: rgba(122, 214, 176, 0.5);
+      height:35px;
+      width:110px;
+      padding:5px;
+      color:rgb(9, 39, 35);
+
+
+    }
+   </style>
+</head>
+<body>
+  <div>
+    <label for="">Weight</label><input type="number" name="" id="weight" placeholder="in kg"><br>
+     <label for="">Height</label><input type="number" name="" id="height" placeholder="in meter"><br>
+     <button type="button">Calculate BMI</button><br><br>
+   <label for="" style="font-size: 15px;">Your BMI</label><span style="height:20px;width:100px;border:2px solid black;border-radius: 5px;margin-top: -3px;text-align: center;color: white;"></span>
+   </div>
+   
+   
+   
+   <script>
+    //   formula to find bmi  height in inches 703*(weight(pounds)/height(inches)**2)
+     const btn=document.querySelector('button');
+     const h3=document.querySelector('span');
+     btn.addEventListener('click',()=>{
+    const input1=document.getElementById('weight').value;
+     const input2=document.getElementById('height').value;
+        let weight=Number(input1);
+        let height=Number(input2);
+    
+        let heightsqr=height*height;
+        
+        let BMI=weight/heightsqr;
+        
+        h3.innerHTML=BMI.toFixed(2);
+
+     })
+   </script>
+     
+</body>
+</html>
